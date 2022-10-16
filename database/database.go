@@ -94,7 +94,7 @@ func ParticularToDoRead(todoUUID uuid.UUID) ([]*ent.ToDo, error) {
 
 // 기존의 생성되어 있는 ToDo를 수정합니다.
 // cmd.ToDo 객체가 필요하며, 결과값인 정수와 오류를 반환합니다.
-func Update(data cmd.ToDo) (int, error) {
+func Update(data *cmd.ToDo) (int, error) {
 	client, err := ConnectionSQLite()
 	if err != nil {
 		return 0, ErrFailedConnectDataBase
